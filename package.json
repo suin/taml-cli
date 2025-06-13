@@ -1,6 +1,6 @@
 {
   "name": "@taml/cli",
-  "version": "1.0.0-alpha.1",
+  "version": "1.0.0",
   "description": "CLI tool to convert ANSI escape sequences to TAML (Terminal ANSI Markup Language) tags",
   "keywords": [
     "ansi",
