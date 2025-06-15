@@ -4,7 +4,7 @@ import { encode } from "@taml/encoder";
 /**
  * Read all input from STDIN
  */
-export async function readStdin(): Promise<string> {
+async function readStdin(): Promise<string> {
   const chunks: Buffer[] = [];
 
   for await (const chunk of process.stdin) {
@@ -17,7 +17,7 @@ export async function readStdin(): Promise<string> {
 /**
  * CLI entry point for taml-cli converter
  */
-export async function main() {
+async function main() {
   try {
     // Read from STDIN
     const input = await readStdin();
@@ -42,7 +42,4 @@ export async function main() {
   }
 }
 
-// Run main function if this file is executed directly
-if (process.argv[1] === import.meta.url.replace("file://", "")) {
-  main();
-}
+main();
