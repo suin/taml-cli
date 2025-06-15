@@ -24,16 +24,6 @@
   "license": "MIT",
   "author": "suin",
   "type": "module",
-  "exports": {
-    ".": {
-      "types": "./js/index.d.ts",
-      "import": "./js/index.js",
-      "require": "./js/index.js"
-    }
-  },
-  "main": "./js/index.js",
-  "module": "./js/index.js",
-  "types": "./js/index.d.ts",
   "bin": {
     "taml": "./js/index.js"
   },

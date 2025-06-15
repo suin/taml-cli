@@ -751,7 +751,7 @@ echo -e "\033[31mTest\033[0m" | bun run ts/index.ts
 
 ### Testing
 
-The project uses Bun for testing with comprehensive test coverage:
+The project uses Bun for testing with comprehensive E2E test coverage:
 
 ```bash
 # Run all tests
@@ -759,10 +759,6 @@ bun test
 
 # Run tests in watch mode
 bun test --watch
-
-# Run specific test files
-bun test cli.test.ts
-bun test integration.test.ts
 
 # Run with coverage
 bun test --coverage
@@ -772,11 +768,13 @@ bun test --coverage
 
 The CLI is thoroughly tested with:
 
-- **Unit Tests**: Core CLI functionality, error handling, argument processing
-- **Integration Tests**: Real-world ANSI conversion scenarios
+- **E2E Tests**: Real-world CLI execution using `npx .` to test the actual binary
+- **ANSI Conversion**: Complete ANSI-to-TAML conversion scenarios
 - **Edge Cases**: Malformed sequences, empty input, large files
-- **Performance Tests**: Memory usage, processing speed
+- **Process Validation**: Exit codes, stdout/stderr handling
 - **Platform Tests**: Cross-platform compatibility
+
+The E2E testing approach ensures that the CLI works exactly as users will experience it, testing the complete pipeline from ANSI input through the actual compiled binary to TAML output.
 
 ### Code Quality
 
